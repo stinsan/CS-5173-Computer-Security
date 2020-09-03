@@ -7,7 +7,7 @@
 ### Cryptography vs Steganography
 - Steganography concerns existence. It conceals the very existence of communication. In other words, it hides the secret message in plain sight.
 
-insert 001.png
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/001.PNG)
 
 ### Encryption and Decryption
 - **Plaintext**: the original message
@@ -16,11 +16,10 @@ insert 001.png
 - **Decryption**: the process that transforms a ciphertext to plaintext
 - **Key**: the value that is used to control encryption and decryption
 
-insert 002.png
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/002.PNG)
 
 ### Cryptanalysis
 **Definition**: The art of defeating cryptsystems to gain access to the real contents of encrypted messages. The difficulty depends on the sophistication of the cryptsystem and the amount of information available to the breaker.
-
 
 **Ciphertext Only Attacks**: Eve intercepts a set of ciphertexts, and to break the cipher she must analyze patters in the ciphertext which can provide clues about the plaintext and keys.
 
@@ -46,12 +45,12 @@ AND / OR
 ### Caesar Cipher
 Here's an example of a Caesar Cipher where we replace each letter with the one 3 letters down the alphabet:
 
-insert 003.png
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/003.PNG)
 
 ### Mono-Alphabetic Ciphers
 This is a generalized substitution cipher, which is done by randomly mapping one letter to another.
 
-insert 004.png
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/004.PNG)
 
 There are 26! (approximately 2<sup>88</sup>) different combination possibilities. 
 
