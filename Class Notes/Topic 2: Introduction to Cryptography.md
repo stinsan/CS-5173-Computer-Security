@@ -56,3 +56,29 @@ There are 26! (approximately 2<sup>88</sup>) different combination possibilities
 
 The key must specify the permutation used. How many bits does that take?\
 It takes log<sub>2</sub>(26!) = approximately 88 bits.
+
+### Attacking Mono-Alphabetic Ciphers
+Mono-alphabetic ciphers are susceptible to known plaintext attacks. This is because the frequency of letters that appear in a sentence in English varies:
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/005.PNG)
+
+#### Example:
+Suppose the attacker intercepts the following message:
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/006.PNG)
+
+The frequency of letters are:
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/007.PNG)
+
+Using the letter frequency chart above, we can decipher that the plaintext is:
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/008.PNG)
+
+### Vigenere Cipher
+The vigenere cipher aims to improve upon mono-alphabetic ciphers by changing the letter frequency. 
+
+How it works:
+- A *set* of mono-alphabetic substitution rules are used. For example, for a key of (3 1 5), substitute first letter in plaintext by letter + 3, second letter by letter + 1, third letter by letter + 5 -- then repeat this cycle for each 3 letters.
+
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/009.PNG)
+
+### Hill Ciphers
+- To encyrpt a plaintext _p_ into the ciphertext _c_, we multiply _p_ by the key matrix _K_. Matrix _K_ is _m_ x _m_ and
+- Encrypts _m_ letters of plaintext at each step
