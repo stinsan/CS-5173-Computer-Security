@@ -69,16 +69,44 @@ The frequency of letters are:
 ![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/007.PNG)
 
 Using the letter frequency chart above, we can decipher that the plaintext is:
+
 ![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/008.PNG)
 
 ### Vigenere Cipher
 The vigenere cipher aims to improve upon mono-alphabetic ciphers by changing the letter frequency. 
 
 How it works:
-- A *set* of mono-alphabetic substitution rules are used. For example, for a key of (3 1 5), substitute first letter in plaintext by letter + 3, second letter by letter + 1, third letter by letter + 5 -- then repeat this cycle for each 3 letters.
+- A *set* of mono-alphabetic substitution rules are used. For example, for a key of (3 1 5), substitute first letter in plaintext by letter + 3, second letter by letter + 1, third letter by letter + 5. Then repeat this cycle for each 3 letters.
 
 ![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/009.PNG)
 
 ### Hill Ciphers
-- To encyrpt a plaintext _p_ into the ciphertext _c_, we multiply _p_ by the key matrix _K_. Matrix _K_ is _m_ x _m_ and
-- Encrypts _m_ letters of plaintext at each step
+- To encyrpt a plaintext _p_ into the ciphertext _c_, we multiply _p_ by the _m_ x _m_ key matrix _K_, i.e. _c = Kp_.
+- Encrypts _m_ letters of plaintext at each step.
+- To decrypt, we calculate _p = K<sup>-1</sup> c_.
+
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/010.PNG)
+
+### Permutation Ciphers
+The previous ciphers were called _substitution_ ciphers because they substituted one symbol in the alphabet for another.\
+A **permutation cipher** rearranges the letters in the message.
+
+#### First Example:
+Permute each successive block of 5 letters in the message according to the position offset <+1, +3, -2, 0, -2>.
+
+Plaintext:  W H Y O W | H Y C A N | T I F L Y\
+Ciphertext: Y W W O H | C H N A Y | F T Y L I
+
+#### Second Example: 
+Arrange the plaintext in block of _n_ columns and _m_ rows, then permute the columns in a block according to a key _K_.
+
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/011.PNG)
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/012.PNG)
+
+### One-Time Pads
+**Definition**: Generate a random bit string (the key _K_) that is as long as the plaintext _p_, and share it with the other communicating party. 
+To encrypt, we calculate _K_ ⊕ _p_ to get the ciphertext _c_.
+To decrypt, we calculate _K_ ⊕ _c_ to get the plaintext _p_.
+
+Note that the key cannot be reused because if _c_ = _K_ ⊕ _p_, then we can calculate the key by _K_ = _c_ ⊕ _p_.
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/013.PNG)
