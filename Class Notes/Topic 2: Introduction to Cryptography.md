@@ -110,3 +110,44 @@ To decrypt, we calculate _K_ ⊕ _c_ to get the plaintext _p_.
 
 Note that the key cannot be reused because if _c_ = _K_ ⊕ _p_, then we can calculate the key by _K_ = _c_ ⊕ _p_.
 ![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/013.PNG)
+
+### Secret Key Cryptography
+In secret key cryptography, there are multiple applications of interleaved substitutions and permutations. For example, stream ciphers such as RC4 and block ciphers such as DES, IDEA, and AES.
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/014.PNG)
+
+**Applications of Secret Key Cryptography**:
+- Authentication; i.e. proving that the other party knows the secret key. However, this must be secure against a chosen plaintext attack.
+- Integrity check
+
+### Public Key Cryptography
+In public key cryptography, a public/private key pair is used. The public key is known to all, and the private key is kept secret by the owner.
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/015.PNG)
+
+Public key cryptography can also be used for **digital signatures**. Only the party with the private key can create a digital signature, which is verifiable by anyone who knows the public key. 
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/016.PNG)
+
+**Applications of Public Key Cryptography**:
+- Data transmission
+- Storage
+- Authentication
+- Digital signatures
+- Key exchange
+
+### Hash Algorithms
+How it works:
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/017.PNG)
+
+The length of the output message, _H(m)_ is much shorter than the input, _m_. Usually, _m_ is of fixed length of 128 or 160 bits.
+
+**Desireable Properties of Hash Functions**:
+- Performance: it is each to compute _H(m)_.
+- One-way property: Given _H(m)_, it is difficult to find _m_.
+- Weak collision free: Given _H(m)_, it is difficult to find _m'_ s.t. _H(m')_ = _H(m)_.
+- Stroeng collision free: Computationally infeasible to find _m<sub>1</sub>_ and _m<sub>2</sub>_ s.t. _H(m<sub>1</sub>)_ = _H(m<sub>2</sub>)_.
+
+**Applications of Hash Functions**:
+- Primary application is to generate and verify digital signatures.
+![](https://github.com/stinsan/CS-5173-Computer-Security/blob/master/Screenshots/018.PNG)
+- Password hashing
+- Message integrity
+- Message fingerprinting
